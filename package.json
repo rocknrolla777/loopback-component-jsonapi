@@ -8,7 +8,7 @@
     "test": "npm run lint && istanbul cover _mocha --report lcovonly --reporter=spec ./test/**/*.test.js && npm run inspect && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
     "tester": "mocha --reporter=spec ./test/**/*.test.js",
     "coverage": "istanbul cover _mocha ./test/**/*.test.js",
-    "lint": "standard .",
+    "lint": "standard test/**/*.js lib/**/*.js",
     "version:major": "xyz -i major",
     "version:minor": "xyz -i minor",
     "version:patch": "xyz -i patch",
