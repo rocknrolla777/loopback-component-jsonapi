@@ -242,8 +242,7 @@ describe('loopback json api hasMany relationships', function () {
                 expect(res.body.included[0]).to.have.all.keys(
                   'type',
                   'id',
-                  'attributes',
-                  'relationships'
+                  'attributes'
                 )
                 expect(res.body.included[0].type).to.equal('comments')
                 expect(res.body.included[0].id).to.equal('1')
@@ -276,13 +275,6 @@ describe('loopback json api hasMany relationships', function () {
                 attributes: {
                   title: 'My comment',
                   comment: 'My comment text'
-                },
-                relationships: {
-                  replies: {
-                    links: {
-                      related: res.body.included[0].relationships.replies.links.related
-                    }
-                  }
                 }
               })
               expect(res.body.included[1]).to.deep.equal({
@@ -291,13 +283,6 @@ describe('loopback json api hasMany relationships', function () {
                 attributes: {
                   title: 'My second comment',
                   comment: 'My second comment text'
-                },
-                relationships: {
-                  replies: {
-                    links: {
-                      related: res.body.included[1].relationships.replies.links.related
-                    }
-                  }
                 }
               })
               done()
@@ -383,8 +368,7 @@ describe('loopback json api hasMany relationships', function () {
                 expect(res.body.included[0]).to.have.all.keys(
                   'type',
                   'id',
-                  'attributes',
-                  'relationships'
+                  'attributes'
                 )
                 expect(res.body.included[0].type).to.equal('comments')
                 expect(res.body.included[0].id).to.equal('1')
